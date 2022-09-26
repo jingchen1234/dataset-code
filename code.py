@@ -488,7 +488,7 @@ class MFM(nn.Module):
         xlg = xl + xg
         wei = self.sigmoid(xlg)
 
-        xo = 2 * x * wei + 2 * residual * (1 - wei)
+        xo =  x * wei +  residual * (1 - wei)
         if self.conv1:
             xo = self.conv(xo)
         return xo
